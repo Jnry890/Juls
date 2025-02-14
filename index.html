@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Happy Valentine's Day ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts-container"></div>
+
+    <div class="container">
+        <h1>Happy Valentine's Day, My Baby Juls! ❤️</h1>
+        <p>You make every day special. I'm so lucky to have you! 💖</p>
+        <button onclick="openPopup()">Click for a surprise</button>
+    </div>
+
+    <!-- Pop-up Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+
+            <!-- Slideshow Container -->
+            <div class="slideshow-container">
+                <img class="slide" src="../pics/img1.jpg" alt="Our Picture 1">
+                <img class="slide" src="../pics/img2.jpg" alt="Our Picture 2">
+                <img class="slide" src="../pics/img3.jpg" alt="Our Picture 3">
+                <img class="slide" src="../pics/img4.jpg" alt="Our Picture 4">
+                <img class="slide" src="../pics/img5.jpg" alt="Our Picture 5">
+
+                <!-- Navigation Buttons -->
+                <button class="prev" onclick="changeSlide(-1)">❮</button>
+                <button class="next" onclick="changeSlide(1)">❯</button>
+            </div>
+    <!-- Hidden Audio Player -->
+    <audio id="romanticSong" preload="auto">
+        <source src="song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+            <p>I love you so much! 💕</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

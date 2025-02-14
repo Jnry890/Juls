@@ -1,0 +1,195 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(120deg, #ff758c, #ff7eb3);
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Main Container */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    backdrop-filter: blur(10px);
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Button */
+button {
+    background-color: #ff477e;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e63e6b;
+    transform: scale(1.1);
+}
+
+/* Hidden Message */
+.hidden {
+    display: none;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: yellow;
+    margin-top: 20px;
+}
+
+/* Pop-up Modal */
+.popup {
+    display: none; /* Ensures pop-up is hidden at start */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Image Styling */
+/* Text inside the pop-up */
+.popup-content p {
+    color: #ff477e; /* Soft pink, change to black if needed */
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ff477e; /* Soft pink */
+    background: none;
+    border: none;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Ensure all images are the same size */
+.slide {
+    display: none;
+    width: 100%;
+    max-height: 300px; /* Adjust height as needed */
+    object-fit: cover; /* Crop images to fit without stretching */
+    border-radius: 10px;
+}
+
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Floating Hearts Background */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #ff477e;
+    opacity: 0.7;
+    clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0% 35%);
+    animation: floatHearts 5s linear infinite;
+}
+
+/* Heart Floating Animation */
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Make Everything Mobile-Friendly */
+@media (max-width: 768px) {
+    /* Adjust Pop-up Size */
+    .popup-content {
+        width: 90%; /* Make it fit small screens */
+        max-width: 350px; /* Prevent it from getting too big */
+        padding: 15px;
+    }
+
+    /* Resize Button */
+    .popup-content button {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+
+    /* Adjust Close Button (X) */
+    .close {
+        font-size: 25px; /* Slightly smaller */
+        top: 5px;
+        right: 10px;
+    }
+
+    /* Make Images Fit on Mobile */
+    .slide {
+        max-height: 250px; /* Reduce image size for small screens */
+    }
+
+    /* Make Floating Hearts Smaller */
+    .heart {
+        width: 15px;
+        height: 15px;
+    }
+}
